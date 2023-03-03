@@ -43,14 +43,10 @@ def get_ip() -> str:
     except:
         return "no_internet"
 
-while True:
-    port = random.randrange(49152, 65535)
-    try:
-        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as check:
-            check.connect(("0.0.0.0", port))
-            check.settimeout(1)
-    except:
-        break
+with socket.socket() as tmp:
+    tmp.bind(("",0))
+    port = tmp.getsockname()[1]
+
 password = "".join(random.choices("qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890", k=5))
 
 threading.Thread(target=service, args=(port, password,), daemon=True).start()
