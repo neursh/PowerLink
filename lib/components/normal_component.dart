@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../tcp_var.dart';
-import '../utils/qrcode_handle.dart';
 import 'result.dart';
 
 class NormalHandler extends StatefulWidget {
@@ -69,22 +66,25 @@ class _NormalHandler extends State<NormalHandler> {
                               const SizedBox(height: 20),
                               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                                 TextButton(
-                                    onPressed: () => setState(() => Navigator.of(context).pop()),
+                                    onPressed: () => Navigator.of(context).pop(),
                                     child: const Text("Hủy")),
                                 const SizedBox(width: 10),
                                 FilledButton.tonal(
                                     onPressed: !connectPart
-                                        ? () => setState(() => {
-                                              connectPart = true,
-                                              connected.value == "connecting",
-                                              nCheck(ip: ip, port: int.parse(port), pass: pass)
-                                            })
+                                        ? () => setState(() => connectPart = true)
                                         : null,
                                     child: const Text("Kết nối"))
                               ])
                             ])))
                   ])
-                : const ConnectionCheck(),
+                : FutureBuilder(
+                    future: Future.delayed(const Duration(milliseconds: 100)),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return ConnectionCheck(ip: ip, port: int.parse(port), pass: pass);
+                      }
+                      return Container();
+                    }),
           ],
         ),
       ),

@@ -1,4 +1,4 @@
-name: clink
+name: powerlink
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   mobile_scanner: ^3.0.0
+  wakelock: ^0.6.2
 
 dev_dependencies:
   flutter_test:

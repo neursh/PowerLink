@@ -1,4 +1,4 @@
-package dev.neurs.clink
+package dev.neurs.powerlink
 
 import io.flutter.embedding.android.FlutterActivity
 

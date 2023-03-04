@@ -1,18 +1,20 @@
 import 'dart:convert';
-
+import 'package:wakelock/wakelock.dart';
 import 'package:flutter/material.dart';
 import '../components/result.dart';
 import '../tcp_var.dart';
-import '../utils/qrcode_handle.dart';
 
-class InteractionHandler extends StatefulWidget {
+class InteractionHandler extends StatelessWidget {
   const InteractionHandler({super.key});
 
-  @override
-  State<StatefulWidget> createState() => _InteractionHandler();
-}
+  void initState() {
+    Wakelock.enable();
+  }
 
-class _InteractionHandler extends State<InteractionHandler> {
+  void dispose() {
+    Wakelock.disable();
+  }
+
   @override
   Widget build(BuildContext context) {
     void navigate(String key) {
@@ -37,14 +39,12 @@ class _InteractionHandler extends State<InteractionHandler> {
                   TextButton(
                     child: const Text("Thử lại"),
                     onPressed: () {
-                      nCheck();
                       showModalBottomSheet<void>(
                           context: context,
                           isScrollControlled: true,
                           builder: (BuildContext context) {
                             return const SizedBox(height: 150, child: ConnectionCheck());
                           });
-                      Navigator.of(context).pop();
                     },
                   ),
                 ],

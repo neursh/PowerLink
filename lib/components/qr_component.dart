@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../tcp_var.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import '../utils/qrcode_handle.dart';
+import '../utils/tcp_establisher.dart';
 import 'result.dart';
 
 class QRHandler extends StatefulWidget {
@@ -13,6 +13,7 @@ class QRHandler extends StatefulWidget {
 
 class _QRHandler extends State<QRHandler> {
   bool connectPart = false;
+  BarcodeCapture? capture;
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -37,13 +38,9 @@ class _QRHandler extends State<QRHandler> {
                         width: MediaQuery.of(context).size.width,
                         child: MobileScanner(
                             controller: MobileScannerController(detectionTimeoutMs: 1000),
-                            onDetect: (capture) => setState(() => {
-                                  connectPart = true,
-                                  connected.value == "connecting",
-                                  qrCheck(capture)
-                                })))
+                            onDetect: (cap) => {capture = cap, setState(() => connectPart = true)}))
                   ])
-                : const ConnectionCheck(),
+                : ConnectionCheck(capture: capture),
           ],
         ),
       ),

@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.neurs.clink">
+    package="dev.neurs.powerlink">
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="clink"
+        android:label="PowerLink"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
