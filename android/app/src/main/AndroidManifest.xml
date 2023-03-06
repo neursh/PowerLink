@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.neurs.layerstex">
+    package="dev.neurs.powerlink">
     <queries>
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -9,7 +9,7 @@
     </queries>
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="layerstex"
+        android:label="powerlink"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
