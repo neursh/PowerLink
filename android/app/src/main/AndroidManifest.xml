@@ -1,9 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.neurs.powerlink">
-    <uses-permission android:name="android.permission.CAMERA"/>
+    package="com.neurs.layerstex">
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="PowerLink"
+        android:label="layerstex"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
