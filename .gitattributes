@@ -2,3 +2,6 @@ interaction.dart linguist-vendored
 normal_component.dart linguist-vendored
 connect_prompt.dart linguist-vendored
 qrcode_handle.dart linguist-vendored
+qr_component.dart linguist-vendored
+result.dart linguist-vendored
+tcp_establisher.dart linguist-vendored
