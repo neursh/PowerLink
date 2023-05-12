@@ -18,7 +18,6 @@ class ConnectionCheck extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("Rebuilt");
     return FutureBuilder(
         future: establish(),
         builder: (context, snapshot) {
@@ -58,7 +57,6 @@ class ConnectionCheck extends StatelessWidget {
   }
 
   Future<void> establish() async {
-    debugPrint("Called");
     connected.value = "connecting";
     await Future.delayed(const Duration(seconds: 1));
     if (capture != null) {
