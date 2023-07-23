@@ -8,4 +8,5 @@ I did it for fun and to avoid hustle when using other current apps.
 - TCP/IP with password verification.
 - Connect manually or via QR Code.
 - Allows limited keys executed to avoid attackers.
+- 
 This project is not associated whatsoever with Microsoft.
