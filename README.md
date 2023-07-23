@@ -1,5 +1,5 @@
 # PowerLink
-A tight deadline app on iPhone & Android for navigating PowerPoint presentation!
+A tight deadline app on iPhone & Android for navigating PowerPoint presentations on PC!
 
 ## Why?
 I did it for fun and to avoid hustle when using other current apps.
