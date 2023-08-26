@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import '../tcp_var.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import '../utils/tcp_establisher.dart';
-import 'result.dart';
 
 class QRHandler extends StatefulWidget {
   const QRHandler({super.key});
@@ -28,8 +25,9 @@ class _QRHandler extends State<QRHandler> {
                 child: Container(
                     height: 5,
                     width: 80,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(5), color: Colors.grey))),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.grey))),
             !connectPart
                 ? Column(children: [
                     const Text("Quét mã QR", style: TextStyle(fontSize: 20)),
@@ -37,8 +35,12 @@ class _QRHandler extends State<QRHandler> {
                         height: MediaQuery.of(context).size.height - 354,
                         width: MediaQuery.of(context).size.width,
                         child: MobileScanner(
-                            controller: MobileScannerController(detectionTimeoutMs: 1000),
-                            onDetect: (cap) => {capture = cap, setState(() => connectPart = true)}))
+                            controller: MobileScannerController(
+                                detectionTimeoutMs: 1000),
+                            onDetect: (cap) => {
+                                  capture = cap,
+                                  setState(() => connectPart = true)
+                                }))
                   ])
                 : ConnectionCheck(capture: capture),
           ],

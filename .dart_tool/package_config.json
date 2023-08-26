@@ -104,8 +104,20 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///C:/Users/QUAN/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///C:/Users/QUAN/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.8.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/Users/QUAN/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -206,7 +218,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-08-26T09:41:43.406339Z",
+  "generated": "2023-08-26T09:48:29.643848Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }
