@@ -1,4 +1,4 @@
-package com.neurs.layerstex
+package dev.neurs.powerlink
 
 import io.flutter.embedding.android.FlutterActivity
 
